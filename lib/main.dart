@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -46,6 +47,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String _currentFortune="";
 
   final _fortuneList = [
     "You will be lucky today",
@@ -58,6 +60,17 @@ class _MyHomePageState extends State<MyHomePage> {
     "You will be bad today",
     "You will be good today",
   ];
+
+  void _randomFourtune(){
+    var random = Random();
+    int fortune = random.nextInt(_fortuneList.length);
+    _currentFortune = _fortuneList[fortune];
+    setState(() {
+      _currentFortune = _currentFortune;
+    });
+
+  }
+
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -93,14 +106,14 @@ class _MyHomePageState extends State<MyHomePage> {
               "Your furten is ",
               ),
             Text(
-              '${_fortuneList[_counter % _fortuneList.length]}',
+              '${_currentFortune}',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _randomFourtune,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
