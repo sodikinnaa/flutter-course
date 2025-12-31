@@ -58,13 +58,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "Your furten is ",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-              ),
+              Image.asset(
+                'assets/images/aquakids_logo.png', 
+                width: 100, 
+                height: 100, 
+                fit: BoxFit.cover,),
               Card(
                 child: Padding(
                   padding: EdgeInsets.all(8),
