@@ -68,14 +68,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Padding(
                   padding: EdgeInsets.all(8),
                   child: Text(
-                    '${_currentFortune}',
+                    _currentFortune,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ),
               ),
               ElevatedButton(
                 onPressed: _randomFourtune,
-                child: Text('Generate Fortune'),
+                child: const Text('Generate Fortune'),
               ),
           ],
         ),
