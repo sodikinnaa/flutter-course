@@ -38,20 +38,21 @@ class _MyHomePageState extends State<MyHomePage> {
     "Lorem ipsum dolor sit amet, panda",
     "Lorem ipsum dolor sit amet, kuli.",
   ];
+  
   void _randomFourtune(){
     var random = Random();
     int fortune = random.nextInt(_fortuneList.length);
     _currentFortune = _fortuneList[fortune];
     setState(() {
       _currentFortune = _currentFortune;
+      print("New fortune: $_currentFortune");
     });
 
   }
 
-
   @override
   Widget build(BuildContext context) {
-   
+    print("Building the widget");
     return Scaffold(
       appBar: AppBar(),
       body: Center(
@@ -79,11 +80,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _randomFourtune,
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.add),
-      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
